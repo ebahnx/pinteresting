@@ -1,4 +1,12 @@
 <div class="jumbotron center">
 	<h1>Welcome to the most boring app on the web!</h1>
-	<p>Click here to <%= link_to "SIGN UP", "#", class: "btn btn-default btn-lg" %> or <%= link_to "LOGIN", "#", class: "btn btn-primary btn-lg" %></p>
+	<% if user_signed_in? %>
+		# do something
+	<% else %>
+		<p>
+			Click here to <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-default btn-lg" %> 
+			or <%= link_to "LOGIN", new_user_session_path, class: "btn btn-primary btn-lg" %>
+		</p>
+	<% end %>
+	
 </div>
